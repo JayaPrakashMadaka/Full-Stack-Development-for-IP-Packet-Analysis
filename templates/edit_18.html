@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>The option value attribute</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #ede5e5;
+      }
+      h1 {
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 20px;
+      }
+      form {
+        width: 500px;
+        margin: 0 auto;
+        background-color: #b4afaf;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+      label {
+        display: block;
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+      select {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px #100f0f;
+        border-bottom: 2px solid #ccc;
+        background-color: #fcfafa;
+        margin-bottom: 20px;
+        border-radius: 5px;
+      }
+      input[type="submit"] {
+        display: block;
+        margin: 0 auto;
+        padding: 10px 20px;
+        background-color: #534caf;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #3e8e41;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Select The Timestamp</h1>
+
+    <form method="POST" action="{{ url_for('editnew_18') }}">
+      <label for="cars">choose starting time:</label>
+
+      <select id="start" name="start">
+        <!-- <option value="volvo">Volvo XC90</option>
+        <option value="saab">Saab 95</option>
+        <option value="mercedes">Mercedes SLK</option>
+        <option value="audi">Audi TT</option> -->
+      </select>
+      
+      <label for="cars">choose ending time:</label>
+      <select id="end" name="end">
+        <!-- <option value="volvo">Volvo XC90</option>
+        <option value="saab">Saab 95</option>
+        <option value="mercedes">Mercedes SLK</option>
+        <option value="audi">Audi TT</option> -->
+      </select>
+
+      <input type="submit" value="Submit">
+    </form>
+
+    <script>
+      // Define the options for the select element as an array
+        // Define the options for the select elemen
+        var timestamp= ["2017-04-26 03:00:00+05:30",
+                        "2017-04-26 04:00:00+05:30",
+                        "2017-04-26 11:00:00+05:30",
+                        "2017-04-27 04:00:00+05:30",
+                        "2017-04-27 05:00:00+05:30",
+                        "2017-04-27 06:00:00+05:30",
+                        "2017-04-27 07:00:00+05:30",
+                        "2017-04-27 08:00:00+05:30",
+                        "2017-04-27 09:00:00+05:30",
+                        "2017-04-27 10:00:00+05:30",
+                        "2017-04-27 11:00:00+05:30",
+                        "2017-04-28 09:00:00+05:30",
+                        "2017-04-28 10:00:00+05:30",
+                        "2017-05-09 09:00:00+05:30",
+                        "2017-05-09 10:00:00+05:30",
+                        "2017-05-09 11:00:00+05:30",
+                        "2017-05-09 12:00:00+05:30",
+                        "2017-05-11 03:00:00+05:30",
+                        "2017-05-11 10:00:00+05:30",
+                        "2017-05-11 11:00:00+05:30",
+                        "2017-05-15 04:00:00+05:30",
+                        "2017-05-15 05:00:00+05:30",
+                        "2017-05-15 09:00:00+05:30",
+                        "2017-05-15 10:00:00+05:30",
+                        "2017-05-15 11:00:00+05:30",
+                        "2017-05-11 09:00:00+05:30"]  
+
+// Get a reference to the select element
+var selectElement = document.getElementById("start");
+
+// Loop through the options array and create an <option> element for each one
+for (var i = 0; i < timestamp.length; i++) {
+  var option = document.createElement("option");
+  option.value = timestamp[i];
+  option.text = timestamp[i];
+  
+  selectElement.appendChild(option);
+}
+var selectElement = document.getElementById("end");
+
+// Loop through the options array and create an <option> element for each one
+for (var i = 0; i < timestamp.length; i++) {
+  var option = document.createElement("option");
+  option.value = timestamp[i];
+  option.text = timestamp[i];
+  selectElement.appendChild(option);
+}
+    </script>
+
+   
+    <script>
+      // Add an event listener to the submit button
+      document.querySelector('input[type="submit"]').addEventListener('click', function() {
+        alert('You submitted the form!');
+      });
+    </script>
+  </body>
+</html>

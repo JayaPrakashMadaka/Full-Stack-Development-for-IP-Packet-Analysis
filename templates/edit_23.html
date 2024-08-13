@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>The option value attribute</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #ede5e5;
+      }
+      h1 {
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 20px;
+      }
+      form {
+        width: 500px;
+        margin: 0 auto;
+        background-color: #b4afaf;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+      label {
+        display: block;
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+      select {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px #100f0f;
+        border-bottom: 2px solid #ccc;
+        background-color: #fcfafa;
+        margin-bottom: 20px;
+        border-radius: 5px;
+      }
+      input[type="submit"] {
+        display: block;
+        margin: 0 auto;
+        padding: 10px 20px;
+        background-color: #534caf;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #3e8e41;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Select The App</h1>
+
+    <form method="POST" action="{{ url_for('editnew_23') }}">
+      <label for="cars">choose:</label>
+
+      <select id="start" name="start">
+        <!-- <option value="volvo">Volvo XC90</option>
+        <option value="saab">Saab 95</option>
+        <option value="mercedes">Mercedes SLK</option>
+        <option value="audi">Audi TT</option> -->
+      </select>
+
+      <input type="submit" value="Submit">
+    </form>
+
+    <script>
+      // Define the options for the select element as an array
+        // Define the options for the select elemen
+        var apps= ["99TAXI","AMAZON","APPLE","APPLE_ICLOUD","APPLE_ITUNES","BGP","BITTORRENT","CITRIX","CITRIX_ONLINE","CLOUDFLARE","CNN","CONTENT_FLASH","DEEZER","DNS","DROPBOX","EASYTAXI","EBAY","EDONKEY","FACEBOOK","FTP_CONTROL","FTP_DATA","GMAIL","GOOGLE","GOOGLE_MAPS","H323","HTTP","HTTP_CONNECT","HTTP_DOWNLOAD","HTTP_PROXY","INSTAGRAM","IP_ICMP","IP_OSPF","LASTFM","LOTUS_NOTES","MAIL_IMAPS","MICROSOFT","MQTT","MSN","MSSQL","MS_ONE_DRIVE","NETFLIX","NFS","NTP","OFFICE_365","OPENSIGNAL","OPENVPN","ORACLE","OSCAR","QQ","RADIUS","RTMP","SIMET","SKINNY","SKYPE","SNMP","SOCKS","SPOTIFY","SSH","SSL","SSL_NO_CERT","STARCRAFT","TEAMSPEAK","TEAMVIEWER","TELEGRAM","TIMMEU","TOR","TWITCH","TWITTER","UBUNTUONE","UNENCRYPED_JABBER","UPNP","WAZE","WHATSAPP","WHOIS_DAS","WIKIPEDIA","WINDOWS_UPDATE","YAHOO","YOUTUBE"]  
+
+// Get a reference to the select element
+var selectElement = document.getElementById("start");
+
+// Loop through the options array and create an <option> element for each one
+for (var i = 0; i < apps.length; i++) {
+  var option = document.createElement("option");
+  option.value = apps[i];
+  option.text = apps[i];
+  
+  selectElement.appendChild(option);
+}
+
+    </script>
+
+   
+    <script>
+      // Add an event listener to the submit button
+      document.querySelector('input[type="submit"]').addEventListener('click', function() {
+        alert('You submitted the form!');
+      });
+    </script>
+  </body>
+</html>

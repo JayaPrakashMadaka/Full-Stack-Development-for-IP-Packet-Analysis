@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Sidebar Menu Example</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/sidebar-menu.css')}}">
+  </head>
+  
+  <body>
+  
+    <section style="width: 200px">
+      <ul class="sidebar-menu">
+        <li class="sidebar-header">MAIN NAVIGATION</li>
+        <li>
+          <a href="#">
+            <span>HOME</span> <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="sidebar-submenu">
+            <form method="POST" action="{{ url_for('list_Apps') }}">
+            <li><button type="submit" name="net" name="net" value="1">Available Apps</button></li> </form>
+          </ul>
+        </li>
+  
+        <li>
+          <a href="#">
+            <span>SECURITY</span> <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="sidebar-submenu">
+            <form method="POST" action="{{ url_for('table_q10') }}">
+              <li><button type="submit" name="net" name="net" value="10">Non UDP,TCP Protocols</button></li> 
+            </form>
+            <form method="POST" action="{{ url_for('table_q11') }}">
+              <li><button type="submit" name="net" value="11">FTP,TELNET,SMTP</button></li> 
+            </form>
+          </ul>
+        </li>
+  
+        <li>
+          <a href="#">
+            <span>PACKET ANALYSIS</span> <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="sidebar-submenu">
+            <form method="POST" action="{{ url_for('graph_avg_std') }}">
+              <li><button type="submit" name="net" value="4">Fwd packet stats</button></li> 
+            </form>
+          </ul>
+        </li>
+  
+        <li>
+          <a href="#">
+            <span>DIGITAL MONITORING</span> <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="sidebar-submenu">
+            <form method="POST" action="{{ url_for('time_apps') }}">
+              <li><button type="submit" name="net" value="8">Time Usage</button></li> 
+            </form>
+            <form method="POST" action="{{ url_for('graph_ActiveApps') }}">
+              <li><button type="submit" name="net" value="9">Activity</button></li> 
+            </form>
+            <form method="POST" action="{{ url_for('avg_idle_time_apps') }}">
+              <li><button type="submit" name="net" value="14">Avg Idle Time</button></li> 
+            </form>
+            <form method="POST" action="{{ url_for('table_q16') }}">
+              <li><button type="submit" name="net" value="16">IAT Max</button></li> 
+            </form>
+            <form method="POST" action="{{ url_for('count_18') }}">
+              <li><button type="submit" name="net" value="18">App Time Usage</button></li> 
+            </form>
+            <form method="POST" action="{{ url_for('pie_23') }}">
+              <li><button type="submit" name="net" value="23">Daily Activeness</button></li> 
+            </form>
+            <form method="POST" action="{{ url_for('pie_24') }}">
+              <li><button type="submit" name="net" value="24">Hourly Activeness</button></li> 
+            </form>
+            
+          </ul>
+        </li>
+  
+        <li>
+          <a href="#">
+            <span>TRAFFIC ANALYTICS</span> <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="sidebar-submenu">
+            <form method="POST" action="{{ url_for('graph_FIN') }}">
+              <li><button type="submit" name="net" value="5">FIN Flags</button></li> 
+            </form>
+            <form method="POST" action="{{ url_for('table_q12') }}">
+              <li><button type="submit" name="net" value="12">Busy Nodes</button></li> 
+            </form>
+            <form method="POST" action="{{ url_for('table_q13') }}">
+              <li><button type="submit" name="net" value="13">Traffic across Nodes</button></li> 
+            </form>
+            <form method="POST" action="{{ url_for('table_q17') }}">
+              <li><button type="submit" name="net" value="17">DownUP Ratio</button></li> 
+            </form>
+            
+          </ul>
+        </li>
+  
+        <li>
+          <a href="#">
+            <span>FLOW ANALYSIS</span> <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="sidebar-submenu">
+            <form method="POST" action="{{ url_for('table_q2') }}">
+              <li><button type="submit" name="net" value="2">App Flows</button></li> 
+            </form>
+            <form method="POST" action="{{ url_for('table_q3') }}">
+              <li><button type="submit" name="net" value="3">No of Flows</button></li> 
+            </form>
+            <form method="POST" action="{{ url_for('table_q6') }}">
+              <li><button type="submit" name="net" value="6">SubFlows Count</button></li> 
+            </form>
+            <form method="POST" action="{{ url_for('table_q19') }}">
+              <li><button type="submit" name="net" value="19">Longest Flows</button></li> 
+            </form>
+            <form method="POST" action="{{ url_for('graph_21') }}">
+              <li><button type="submit" name="net" value="21">Window Stats</button></li> 
+            </form>
+            <form method="POST" action="{{ url_for('table_q22') }}">
+              <li><button type="submit" name="net" value="22">Negative Window</button></li> 
+            </form>
+            
+          </ul>
+        </li>
+  
+        <li>
+          <a href="#">
+            <span>TRACKING</span> <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="sidebar-submenu">
+            <form method="POST" action="{{ url_for('table_q25') }}">
+              <li><button type="submit" name="net" value="25">IP Tracking</button></li> 
+            </form>
+            <form method="POST" action="{{ url_for('pie_26') }}">
+              <li><button type="submit" name="net" value="26">Traffic at Nodes</button></li> 
+            </form>
+          </ul>
+        </li>
+  
+        <li>
+          <a href="#">
+            <span>OTHERS</span> <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="sidebar-submenu">
+            <form method="POST" action="{{ url_for('graph_avg_std_iat') }}">
+              <li><button type="submit" name="net" value="7">IAT Stats</button></li> 
+            </form>
+            <form method="POST" action="{{ url_for('avg_pkt_15') }}">
+              <li><button type="submit" name="net" value="15">Length Stats</button></li> 
+            </form>
+          </ul>
+        </li>
+        
+      </ul>
+    </section>
+  
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+    <script src="../static/sidebar-menu.js"></script>
+    <script>
+      $.sidebarMenu($('.sidebar-menu'))
+    </script>
+  </body>
+  
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<body>
+
+<canvas id="myChart" style="width:100%;max-width:1500px;margin-left: 200px;"></canvas>
+{% block scripts %}
+<script>
+var xValues = {{protocalNames|tojson}};
+var yValues = {{sum_FIN|tojson}};
+var barColors = ["red", "green","blue","orange","brown","red", "green","blue","orange","brown"];
+
+new Chart("myChart", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+      text: "TOP 10 APPS"
+    }
+  }
+});
+</script>
+{% endblock %}
+
+</body>
+
+</html>
+
+
